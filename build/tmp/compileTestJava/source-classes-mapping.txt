@@ -1,0 +1,2 @@
+com/bcp/bootcamp/shopvintage/auctions/AuctionsApplicationTests.java
+ com.bcp.bootcamp.shopvintage.auctions.AuctionsApplicationTests

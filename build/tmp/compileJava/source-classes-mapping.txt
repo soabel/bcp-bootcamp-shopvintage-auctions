@@ -1,0 +1,6 @@
+com/bcp/bootcamp/shopvintage/auctions/AuctionsApplication.java
+ com.bcp.bootcamp.shopvintage.auctions.AuctionsApplication
+com/bcp/bootcamp/shopvintage/auctions/persistence/entitties/Auction.java
+ com.bcp.bootcamp.shopvintage.auctions.persistence.entitties.Auction
+com/bcp/bootcamp/shopvintage/auctions/web/controllers/AuctionsController.java
+ com.bcp.bootcamp.shopvintage.auctions.web.controllers.AuctionsController
