@@ -30,11 +30,19 @@ public class AuctionsController {
 
     @PostMapping
     public Mono<Auction> save(@RequestBody Auction auction){
-
-//        this.auctionsRepository.saveAll
-//        this.auctionsRepository.findAllById()
-
         return this.auctionsRepository.save(auction);
     }
+
+    @PostMapping("/bulk")
+    public Flux<Auction > saveAll(@RequestBody List<Auction> auctions){
+        return this.auctionsRepository.saveAll(auctions);
+    }
+
+    @GetMapping("/by-ids")
+    public Flux<Auction> findAllById(@RequestBody List<String> ids){
+        return this.auctionsRepository.findAllById(ids);
+    }
+
+
 
 }

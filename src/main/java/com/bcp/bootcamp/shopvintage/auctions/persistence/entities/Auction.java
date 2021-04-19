@@ -9,6 +9,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -24,4 +25,5 @@ public class Auction {
     private Double amount;
     private String status;
     private Date expireDate;
+    private List<AuctionBid> bids;
 }

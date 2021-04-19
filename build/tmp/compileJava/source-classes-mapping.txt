@@ -1,8 +1,10 @@
 com/bcp/bootcamp/shopvintage/auctions/AuctionsApplication.java
  com.bcp.bootcamp.shopvintage.auctions.AuctionsApplication
+com/bcp/bootcamp/shopvintage/auctions/persistence/repositories/AuctionsRepository.java
+ com.bcp.bootcamp.shopvintage.auctions.persistence.repositories.AuctionsRepository
 com/bcp/bootcamp/shopvintage/auctions/web/controllers/AuctionsController.java
  com.bcp.bootcamp.shopvintage.auctions.web.controllers.AuctionsController
 com/bcp/bootcamp/shopvintage/auctions/persistence/entities/Auction.java
  com.bcp.bootcamp.shopvintage.auctions.persistence.entities.Auction
-com/bcp/bootcamp/shopvintage/auctions/persistence/repositories/AuctionsRepository.java
- com.bcp.bootcamp.shopvintage.auctions.persistence.repositories.AuctionsRepository
+com/bcp/bootcamp/shopvintage/auctions/persistence/entities/AuctionBid.java
+ com.bcp.bootcamp.shopvintage.auctions.persistence.entities.AuctionBid
