@@ -2,8 +2,10 @@ package com.bcp.bootcamp.shopvintage.auctions.web.controllers;
 
 import com.bcp.bootcamp.shopvintage.auctions.persistence.entities.Auction;
 import com.bcp.bootcamp.shopvintage.auctions.persistence.entities.AuctionBid;
+import com.bcp.bootcamp.shopvintage.auctions.persistence.entities.BidderType;
 import com.bcp.bootcamp.shopvintage.auctions.persistence.repositories.AuctionsCustomRepository;
 import com.bcp.bootcamp.shopvintage.auctions.persistence.repositories.AuctionsRepository;
+import com.bcp.bootcamp.shopvintage.auctions.persistence.repositories.BiddersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
@@ -23,6 +25,9 @@ public class AuctionsController {
 
     @Autowired
     private AuctionsCustomRepository auctionsCustomRepository;
+
+    @Autowired
+    private BiddersRepository biddersRepository;
 
     @GetMapping
     public Flux<Auction> findAll() {
@@ -63,7 +68,6 @@ public class AuctionsController {
             return this.auctionsRepository.save(au);
         });
 
-
 //        this.auctionsRepository
 //                .findById(id)
 //                .subscribe(au -> {
@@ -80,9 +84,26 @@ public class AuctionsController {
     }
 
     @GetMapping("/query")
-    public Flux<Auction> findQuery(@RequestParam("product") String product) {
-        return this.auctionsCustomRepository.findByName(product);
+    public Flux<Auction> findQuery(@RequestParam(value = "product", required = false) String product,
+                                   @RequestParam(value = "amount", required = false) Double amount) {
+
+        System.out.println("product = " + product);
+        System.out.println("amount = " + amount);
+
+        return this.auctionsCustomRepository.findBy(product, amount);
     }
+
+    @PatchMapping("/update-date")
+    public void updateDate(){
+         this.auctionsCustomRepository.updateDate();
+    }
+
+    @GetMapping("/bidders/types")
+    public Flux<BidderType> findAllTypes(){
+        return this.biddersRepository.findAllTypes();
+    }
+
+
 
 
 }
