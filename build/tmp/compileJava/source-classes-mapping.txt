@@ -2,21 +2,23 @@ com/bcp/bootcamp/shopvintage/auctions/persistence/repositories/BiddersRepository
  com.bcp.bootcamp.shopvintage.auctions.persistence.repositories.BiddersRepository
 com/bcp/bootcamp/shopvintage/auctions/AuctionsApplication.java
  com.bcp.bootcamp.shopvintage.auctions.AuctionsApplication
-com/bcp/bootcamp/shopvintage/auctions/web/controllers/AuctionsController.java
- com.bcp.bootcamp.shopvintage.auctions.web.controllers.AuctionsController
+com/bcp/bootcamp/shopvintage/auctions/persistence/repositories/AuctionsCustomRepositoryImpl.java
+ com.bcp.bootcamp.shopvintage.auctions.persistence.repositories.AuctionsCustomRepositoryImpl
 com/bcp/bootcamp/shopvintage/auctions/persistence/repositories/AuctionsCustomRepository.java
  com.bcp.bootcamp.shopvintage.auctions.persistence.repositories.AuctionsCustomRepository
 com/bcp/bootcamp/shopvintage/auctions/persistence/entities/Auction.java
  com.bcp.bootcamp.shopvintage.auctions.persistence.entities.Auction
-com/bcp/bootcamp/shopvintage/auctions/persistence/entities/AuctionBid.java
- com.bcp.bootcamp.shopvintage.auctions.persistence.entities.AuctionBid
+com/bcp/bootcamp/shopvintage/auctions/persistence/entities/BidderType.java
+ com.bcp.bootcamp.shopvintage.auctions.persistence.entities.BidderType
 com/bcp/bootcamp/shopvintage/auctions/config/MongoDbConfig.java
  com.bcp.bootcamp.shopvintage.auctions.config.MongoDbConfig
 com/bcp/bootcamp/shopvintage/auctions/persistence/repositories/AuctionsRepository.java
  com.bcp.bootcamp.shopvintage.auctions.persistence.repositories.AuctionsRepository
 com/bcp/bootcamp/shopvintage/auctions/persistence/repositories/BidderRepositoryImpl.java
  com.bcp.bootcamp.shopvintage.auctions.persistence.repositories.BidderRepositoryImpl
-com/bcp/bootcamp/shopvintage/auctions/persistence/entities/BidderType.java
- com.bcp.bootcamp.shopvintage.auctions.persistence.entities.BidderType
-com/bcp/bootcamp/shopvintage/auctions/persistence/repositories/AuctionsCustomRepositoryImpl.java
- com.bcp.bootcamp.shopvintage.auctions.persistence.repositories.AuctionsCustomRepositoryImpl
+com/bcp/bootcamp/shopvintage/auctions/persistence/entities/AuctionBid.java
+ com.bcp.bootcamp.shopvintage.auctions.persistence.entities.AuctionBid
+com/bcp/bootcamp/shopvintage/auctions/web/controllers/AuctionsController.java
+ com.bcp.bootcamp.shopvintage.auctions.web.controllers.AuctionsController
+com/bcp/bootcamp/shopvintage/auctions/services/BidsProcessorService.java
+ com.bcp.bootcamp.shopvintage.auctions.services.BidsProcessorService

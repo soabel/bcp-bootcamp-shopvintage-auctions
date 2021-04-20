@@ -13,6 +13,7 @@ import java.util.Date;
 @Getter
 @Setter
 public class AuctionBid {
+    private String AuctionId;
     private Double amount;
     private Date date;
     private Integer bidderId;

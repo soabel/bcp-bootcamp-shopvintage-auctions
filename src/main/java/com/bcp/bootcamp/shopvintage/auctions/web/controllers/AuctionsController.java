@@ -7,6 +7,7 @@ import com.bcp.bootcamp.shopvintage.auctions.persistence.repositories.AuctionsCu
 import com.bcp.bootcamp.shopvintage.auctions.persistence.repositories.AuctionsRepository;
 import com.bcp.bootcamp.shopvintage.auctions.persistence.repositories.BiddersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.stream.function.StreamBridge;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -28,6 +29,9 @@ public class AuctionsController {
 
     @Autowired
     private BiddersRepository biddersRepository;
+
+    @Autowired
+    private StreamBridge streamBridge;
 
     @GetMapping
     public Flux<Auction> findAll() {
@@ -54,19 +58,31 @@ public class AuctionsController {
         return this.auctionsRepository.findAllById(ids);
     }
 
+
     @PatchMapping("{id}/bids")
     Mono<Auction> addBid (@PathVariable String id, @RequestBody AuctionBid bid) {
+        bid.setAuctionId(id);
+        bid.setDate(new Date());
+        streamBridge.send("bids-queue", bid);
 
-         return this.auctionsRepository
-        .findById(id)
-        .flatMap(au -> {
-            if (au.getBids() == null) {
-                au.setBids(new ArrayList<>());
-            }
-            bid.setDate(new Date());
-            au.getBids().add(bid);
-            return this.auctionsRepository.save(au);
-        });
+        streamBridge.send("auctions-queue", bid);
+
+        return Mono.just(new Auction());
+
+
+//
+//         return this.auctionsRepository
+//        .findById(id)
+//        .flatMap(au -> {
+//            if (au.getBids() == null) {
+//                au.setBids(new ArrayList<>());
+//            }
+//            bid.setDate(new Date());
+//            au.getBids().add(bid);
+//            return this.auctionsRepository.save(au);
+//        });
+
+
 
 //        this.auctionsRepository
 //                .findById(id)
